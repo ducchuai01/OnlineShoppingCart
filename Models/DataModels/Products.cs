@@ -15,7 +15,7 @@ namespace OnlineShoppingCart.Models
 		[Required]
 		[DisplayName("Product ID")]
 		[StringLength(36)]
-		public string ProductID { get; set; }
+		public Guid ProductID { get; set; }
 		[Required]
 		[DisplayName("Product Name")]
 		[StringLength(100)]

@@ -157,7 +157,6 @@ C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netc
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\PagedList.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\PagedList.Mvc.dll
-C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\OnlineShoppingCart.csproj.AssemblyReference.cache
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Delete.cshtml.g.cs
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Details.cshtml.g.cs

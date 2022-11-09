@@ -1,4 +1,4 @@
-﻿@model EProjects_III.Models.Category
+﻿@model OnlineShoppingCart.Models.Categories
 
 @{
     ViewData["Title"] = "Details";
@@ -30,26 +30,15 @@
             @Html.DisplayFor(model => model.Image)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
+            @Html.DisplayNameFor(model => model.Created_at)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
+            @Html.DisplayFor(model => model.Created_at)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedAt)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedAt)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeleteAt)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeleteAt)
-        </dd>
+       
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.CategoryId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.CategoryID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

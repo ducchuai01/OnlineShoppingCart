@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 namespace OnlineShoppingCart.Models
 {
     [Table("Users")]
+
     public class Users
     {
+    
         [Key]
         [Required]
         [StringLength(36)]
         [DisplayName("User ID")]
-        public string UserID { get; set; }
+        public Guid UserID { get; set; }
         [Required]
         [StringLength(100)]
         [DisplayName("Full Name")]
