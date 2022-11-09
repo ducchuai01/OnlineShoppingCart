@@ -1,0 +1,146 @@
+﻿@*@model IEnumerable<OnlineShoppingCart.Models.Category>*@
+@model PagedList.IPagedList<OnlineShoppingCart.Models.Categories>
+@using PagedList.Mvc;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="bg-secondary rounded h-100 p-4">
+        @*<div class="row">*@
+        <div class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+            <h6 class="">List Of Categories</h6>
+            <form class="d-none d-md-flex ms-4" action="/Admin/Categories/Index" method="GET">
+                @*<input class="form-control bg-dark border-0" type="search" placeholder="Search">*@
+                <div class="input-group input-group-sm" style="width: 350px;">
+                    <input type="text" name="Search" class="form-control float-right" placeholder="Nhâp tên danh mục">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="navbar-nav align-items-center ms-auto">
+            <a class="btn btn-outline-info m-2" asp-area="Admin" asp-controller="Categories" asp-action="Create">Add Category</a>
+        </div>
+        @*</div>*@
+
+
+        <table class="table table-bordered">
+            @if (TempData["success"] != null)
+            {
+                <div class="alert alert-success" role="alert" style="margin-top:20px">
+                    @Html.Raw(TempData["success"])
+                </div>
+            }
+            @if (TempData["eror"] != null)
+            {
+                <div class="alert alert-danger" role="alert" style="margin-top:20px">
+                    @Html.Raw(TempData["eror"])
+                </div>
+            }
+            <thead>
+                <tr>
+                    <th scope="col">CategoryId</th>
+                    <th scope="col">CategoryName</th>
+                    <th scope="col">Descripton</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">CreatedAt</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.CategoryID</th>
+                        <td>@item.CategoryName</td>
+                        <td>@item.Descripton</td>
+                        <td> <img src="/ImgCategory/@item.Image" alt="Alternate Text" width="100" /></td>
+                        <td>@item.Created_at</td>
+                        <td>
+                            <a style="color: green" asp-action="Edit" asp-route-id="@item.CategoryID" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.CategoryID" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),
+             new PagedListRenderOptions
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" }
+                }
+            )
+        </ul>
+    </div>
+</div>
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripton)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ModifiedAt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeleteAt)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripton)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeleteAt)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@

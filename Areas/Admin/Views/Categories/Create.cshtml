@@ -1,0 +1,42 @@
+﻿@model EProjects_III.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4">Add New Category</h6>
+        <form asp-controller="Categories" asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <input asp-for="CategoryId" class="form-control" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CategoryName" class="control-label"></label>
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Descripton" class="control-label"></label>
+                <input asp-for="Descripton" class="form-control" />
+                <span asp-validation-for="Descripton" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" type="file" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Ghi thông tin</button>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

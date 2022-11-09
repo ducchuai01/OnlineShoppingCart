@@ -385,11 +385,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/3.1.30": {
+      "Microsoft.EntityFrameworkCore.Design/3.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.EntityFrameworkCore.Relational": "3.1.30"
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.0"
         },
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -426,10 +426,10 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/3.1.30": {
+      "Microsoft.EntityFrameworkCore.Tools/3.1.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "3.1.30"
+          "Microsoft.EntityFrameworkCore.Design": "3.1.0"
         },
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -876,6 +876,27 @@
         },
         "runtime": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "PagedList/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/40/PagedList.dll": {}
+        },
+        "runtime": {
+          "lib/40/PagedList.dll": {}
+        }
+      },
+      "PagedList.Mvc/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "PagedList": "1.2.0"
+        },
+        "compile": {
+          "lib/40/PagedList.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/40/PagedList.Mvc.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3041,20 +3062,20 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/3.1.30": {
-      "sha512": "UcfdL+FiflqEEpy/m9IJI/0WvoX+P2SwjU31ZT8uE0OOJlNd8F6x47rdZhNtVo2So0O19M+950lghaHTAinDaQ==",
+    "Microsoft.EntityFrameworkCore.Design/3.1.0": {
+      "sha512": "zxyus0fUcAhst5Essf2g+GFgKN7BCITJ004DR4uAkLkn8lLS5MoxNDCBNjCF5lGrNx7a6wBaqQE7tgt7Ss2Hog==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/3.1.30",
+      "path": "microsoft.entityframeworkcore.design/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "build/net461/Microsoft.EntityFrameworkCore.Design.props",
         "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.3.1.30.nupkg.sha512",
-        "microsoft.entityframeworkcore.design.nuspec"
+        "microsoft.entityframeworkcore.design.3.1.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec",
+        "packageIcon.png"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/3.1.30": {
@@ -3085,18 +3106,18 @@
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Tools/3.1.30": {
-      "sha512": "8rLsh7pjMhthwRDnwrwmwSMALhLSi+tOcCxSCdPH0CpoJLijb3GhZJQMpkjaUnjjUf64DDPW9COhRfzzfHutEw==",
+    "Microsoft.EntityFrameworkCore.Tools/3.1.0": {
+      "sha512": "b209nM8vHZXKG6hqZH2cYLpSVEmty9aDZf2gcYyJhpaEhf94AGdRfh8mlZCclJudjk07B37ebRysT1G//0IRzQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/3.1.30",
+      "path": "microsoft.entityframeworkcore.tools/3.1.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.tools.3.1.30.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.3.1.0.nupkg.sha512",
         "microsoft.entityframeworkcore.tools.nuspec",
+        "packageIcon.png",
         "tools/EntityFrameworkCore.PS2.psd1",
         "tools/EntityFrameworkCore.PS2.psm1",
         "tools/EntityFrameworkCore.psd1",
@@ -3104,7 +3125,6 @@
         "tools/about_EntityFrameworkCore.help.txt",
         "tools/init.ps1",
         "tools/net461/any/ef.exe",
-        "tools/net461/win-arm64/ef.exe",
         "tools/net461/win-x86/ef.exe",
         "tools/netcoreapp2.0/any/ef.dll",
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
@@ -4009,6 +4029,35 @@
         "lib/netstandard1.6/NuGet.Frameworks.xml",
         "nuget.frameworks.4.7.0.nupkg.sha512",
         "nuget.frameworks.nuspec"
+      ]
+    },
+    "PagedList/1.2.0": {
+      "sha512": "o/HG2ZEE7eRlqN4dSUalIRfPBaWlx6fEPtzq0vUyGdMfEOSaz0TuQvM6Cqz+VBqWkORa49rEB6YhltBWQUlQDQ==",
+      "type": "package",
+      "path": "pagedlist/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/40/PagedList.dll",
+        "lib/40/PagedList.pdb",
+        "lib/40/PagedList.xml",
+        "pagedlist.1.2.0.nupkg.sha512",
+        "pagedlist.nuspec"
+      ]
+    },
+    "PagedList.Mvc/3.0.0": {
+      "sha512": "nhGHm0ndmi+flDgzxo7vDZp1Qh/TbQc8Sj/BRv17oKqpJjPaqgNQmHz9jK2HlEDq36qXIa1nzYTh6rY1JRIg0Q==",
+      "type": "package",
+      "path": "pagedlist.mvc/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Content/PagedList.css",
+        "lib/40/PagedList.Mvc.dll",
+        "lib/40/PagedList.Mvc.pdb",
+        "lib/40/PagedList.Mvc.xml",
+        "pagedlist.mvc.3.0.0.nupkg.sha512",
+        "pagedlist.mvc.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -8470,8 +8519,9 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.30",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.1.30",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.EntityFrameworkCore.Tools >= 3.0.30",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "PagedList.MVC >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -8525,11 +8575,15 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.1.30, )"
+            "version": "[3.0.30, )"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "PagedList.MVC": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           }
         },
         "imports": [
@@ -8553,5 +8607,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "OnlineShoppingCart depends on Microsoft.EntityFrameworkCore.Tools (>= 3.0.30) but Microsoft.EntityFrameworkCore.Tools 3.0.30 was not found. An approximate best match of Microsoft.EntityFrameworkCore.Tools 3.1.0 was resolved.",
+      "libraryId": "Microsoft.EntityFrameworkCore.Tools",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PagedList 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PagedList",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PagedList.Mvc 3.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PagedList.Mvc",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

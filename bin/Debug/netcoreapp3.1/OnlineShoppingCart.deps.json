@@ -32,8 +32,9 @@
       "OnlineShoppingCart/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.30",
-          "Microsoft.EntityFrameworkCore.Tools": "3.1.30",
+          "Microsoft.EntityFrameworkCore.Tools": "3.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
+          "PagedList.Mvc": "3.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -678,15 +679,15 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/3.1.30": {},
-      "Microsoft.EntityFrameworkCore.Design/3.1.30": {
+      "Microsoft.EntityFrameworkCore.Design/3.1.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.30"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "3.1.30.0",
-            "fileVersion": "3.100.3022.47610"
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.100.19.56505"
           }
         }
       },
@@ -719,9 +720,9 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/3.1.30": {
+      "Microsoft.EntityFrameworkCore.Tools/3.1.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "3.1.30"
+          "Microsoft.EntityFrameworkCore.Design": "3.1.0"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/3.1.30": {
@@ -1175,6 +1176,31 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "PagedList/1.2.0": {
+        "runtime": {
+          "lib/40/PagedList.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/40/PagedList.dll": {}
+        }
+      },
+      "PagedList.Mvc/3.0.0": {
+        "dependencies": {
+          "PagedList": "1.2.0"
+        },
+        "runtime": {
+          "lib/40/PagedList.Mvc.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/40/PagedList.Mvc.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -3946,12 +3972,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/3.1.30",
       "hashPath": "microsoft.entityframeworkcore.analyzers.3.1.30.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/3.1.30": {
+    "Microsoft.EntityFrameworkCore.Design/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UcfdL+FiflqEEpy/m9IJI/0WvoX+P2SwjU31ZT8uE0OOJlNd8F6x47rdZhNtVo2So0O19M+950lghaHTAinDaQ==",
-      "path": "microsoft.entityframeworkcore.design/3.1.30",
-      "hashPath": "microsoft.entityframeworkcore.design.3.1.30.nupkg.sha512"
+      "sha512": "sha512-zxyus0fUcAhst5Essf2g+GFgKN7BCITJ004DR4uAkLkn8lLS5MoxNDCBNjCF5lGrNx7a6wBaqQE7tgt7Ss2Hog==",
+      "path": "microsoft.entityframeworkcore.design/3.1.0",
+      "hashPath": "microsoft.entityframeworkcore.design.3.1.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/3.1.30": {
       "type": "package",
@@ -3967,12 +3993,12 @@
       "path": "microsoft.entityframeworkcore.sqlserver/3.1.30",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.3.1.30.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/3.1.30": {
+    "Microsoft.EntityFrameworkCore.Tools/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8rLsh7pjMhthwRDnwrwmwSMALhLSi+tOcCxSCdPH0CpoJLijb3GhZJQMpkjaUnjjUf64DDPW9COhRfzzfHutEw==",
-      "path": "microsoft.entityframeworkcore.tools/3.1.30",
-      "hashPath": "microsoft.entityframeworkcore.tools.3.1.30.nupkg.sha512"
+      "sha512": "sha512-b209nM8vHZXKG6hqZH2cYLpSVEmty9aDZf2gcYyJhpaEhf94AGdRfh8mlZCclJudjk07B37ebRysT1G//0IRzQ==",
+      "path": "microsoft.entityframeworkcore.tools/3.1.0",
+      "hashPath": "microsoft.entityframeworkcore.tools.3.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/3.1.30": {
       "type": "package",
@@ -4197,6 +4223,20 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "PagedList/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o/HG2ZEE7eRlqN4dSUalIRfPBaWlx6fEPtzq0vUyGdMfEOSaz0TuQvM6Cqz+VBqWkORa49rEB6YhltBWQUlQDQ==",
+      "path": "pagedlist/1.2.0",
+      "hashPath": "pagedlist.1.2.0.nupkg.sha512"
+    },
+    "PagedList.Mvc/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nhGHm0ndmi+flDgzxo7vDZp1Qh/TbQc8Sj/BRv17oKqpJjPaqgNQmHz9jK2HlEDq36qXIa1nzYTh6rY1JRIg0Q==",
+      "path": "pagedlist.mvc/3.0.0",
+      "hashPath": "pagedlist.mvc.3.0.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

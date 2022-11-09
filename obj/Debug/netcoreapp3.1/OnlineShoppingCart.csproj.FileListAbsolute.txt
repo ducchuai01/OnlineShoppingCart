@@ -14,7 +14,6 @@ C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netc
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\OnlineShoppingCart.csproj.AssemblyReference.cache
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\OnlineShoppingCart.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\OnlineShoppingCart.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\OnlineShoppingCart.AssemblyInfo.cs
@@ -156,3 +155,11 @@ C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netc
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\PagedList.dll
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\PagedList.Mvc.dll
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\OnlineShoppingCart.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Delete.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Details.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Edit.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Categories\Index.cshtml.g.cs

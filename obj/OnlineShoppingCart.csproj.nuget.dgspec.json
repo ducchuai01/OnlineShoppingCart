@@ -51,11 +51,15 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.30, )"
+              "version": "[3.0.30, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "PagedList.MVC": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
