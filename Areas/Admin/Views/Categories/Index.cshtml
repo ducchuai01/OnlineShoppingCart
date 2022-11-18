@@ -1,11 +1,9 @@
-﻿@*@model IEnumerable<OnlineShoppingCart.Models.Category>*@
-@model PagedList.IPagedList<OnlineShoppingCart.Models.Categories>
-@using PagedList.Mvc;
+﻿@*@model IEnumerable<OnlineShoppingCart.Models.Categories>*@
+@model X.PagedList.IPagedList<OnlineShoppingCart.Models.Categories>
+@using X.PagedList.Mvc.Core;
 
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml"; }
 
 <div class="container-fluid">
     <div class="bg-secondary rounded h-100 p-4">
@@ -34,16 +32,16 @@
         <table class="table table-bordered">
             @if (TempData["success"] != null)
             {
-                <div class="alert alert-success" role="alert" style="margin-top:20px">
-                    @Html.Raw(TempData["success"])
-                </div>
-            }
+<div class="alert alert-success" role="alert" style="margin-top:20px">
+    @Html.Raw(TempData["success"])
+</div>
+}
             @if (TempData["eror"] != null)
             {
-                <div class="alert alert-danger" role="alert" style="margin-top:20px">
-                    @Html.Raw(TempData["eror"])
-                </div>
-            }
+<div class="alert alert-danger" role="alert" style="margin-top:20px">
+    @Html.Raw(TempData["eror"])
+</div>
+}
             <thead>
                 <tr>
                     <th scope="col">CategoryId</th>
@@ -56,35 +54,35 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <th>@item.CategoryID</th>
-                        <td>@item.CategoryName</td>
-                        <td>@item.Descripton</td>
-                        <td> <img src="/ImgCategory/@item.Image" alt="Alternate Text" width="100" /></td>
-                        <td>@item.Created_at</td>
-                        <td>
-                            <a style="color: green" asp-action="Edit" asp-route-id="@item.CategoryID" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.CategoryID" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+    <tr>
+        <th>@item.CategoryID</th>
+        <td>@item.CategoryName</td>
+        <td>@item.Descripton</td>
+        <td> <img src="/ImgCategory/@item.Image" alt="Alternate Text" width="100" /></td>
+        <td>@item.Created_at</td>
+        <td>
+            <a style="color: green" asp-action="Edit" asp-route-id="@item.CategoryID" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.CategoryID" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
 
 
-                        </td>
-                    </tr>
-                }
+        </td>
+    </tr>
+}
             </tbody>
 
         </table>
     </div>
     <div class="card-footer clearfix">
-        @*<ul class="pagination pagination-sm m-0 float-right">
+        <ul class="pagination pagination-sm m-0 float-right">
             @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }),
-             new PagedListRenderOptions
-                {
-                    LiElementClasses = new string[] { "page-item" },
-                    PageClasses = new string[] { "page-link" }
-                }
-            )
-        </ul>*@
+                       new PagedListRenderOptions
+                       {
+                           LiElementClasses = new string[] { "page-item" },
+                           PageClasses = new string[] { "page-link" }
+                       }
+                      )
+        </ul>
     </div>
 </div>
 @*<p>

@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 using OnlineShoppingCart.Models.BusinessModels;
-using PagedList;
 using OnlineShoppingCart.Models;
+using X.PagedList;
 
 namespace OnlineShoppingCart.Areas.Admin.Controllers
 {
@@ -25,7 +25,7 @@ namespace OnlineShoppingCart.Areas.Admin.Controllers
         public IActionResult Index(string Search, int page = 1)
         {
             int limit = 5;
-            var list = _context.Categories.OrderBy(c => c.CategoryID).ToPagedList(page, limit);
+            var list = _context.Categories.ToPagedList(page, limit);
             if (!string.IsNullOrEmpty(Search))
             {
                 list = _context.Categories.Where(c => c.CategoryName.Contains(Search)).OrderBy(c => c.CategoryID).ToPagedList(page, limit);
