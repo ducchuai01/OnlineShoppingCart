@@ -1,4 +1,4 @@
-﻿@model EProjects_III.Models.Discount
+﻿@model OnlineShoppingCart.Models.Discounts
 
 @{
     ViewData["Title"] = "Edit";
@@ -8,9 +8,9 @@
 <div class="container-fluid">
     <div class="bg-secondary rounded h-100 p-4">
         <h6 class="mb-4">Edit @Model.DiscountName </h6>
-        <form asp-controller="Discounts" asp-action="Edit" asp-route-id="@Model.DiscountId" method="post" >
+        <form asp-controller="Discounts" asp-action="Edit" asp-route-id="@Model.DiscountID" method="post" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="DiscountId" />
+            <input type="hidden" asp-for="DiscountID" />
 
             <div class="form-group">
                 <label asp-for="DiscountName" class="control-label"></label>

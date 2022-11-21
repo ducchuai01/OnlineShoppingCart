@@ -1,4 +1,4 @@
-﻿@model EProjects_III.Models.Category
+﻿@model OnlineShoppingCart.Models.Categories
 
 @{
     ViewData["Title"] = "Edit";
@@ -8,9 +8,9 @@
 <div class="container-fluid">
     <div class="bg-secondary rounded h-100 p-4">
         <h6 class="mb-4">Edit @Model.CategoryName </h6>
-        <form asp-controller="Categories" asp-action="Edit" asp-route-id="@Model.CategoryId" method="post" enctype="multipart/form-data">
+        <form asp-controller="Categories" asp-action="Edit" asp-route-id="@Model.CategoryID" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CategoryId" />
+            <input type="hidden" asp-for="CategoryID" />
             <input type="hidden" asp-for="Image" />
             <div class="form-group">
                 <label asp-for="CategoryName" class="control-label"></label>

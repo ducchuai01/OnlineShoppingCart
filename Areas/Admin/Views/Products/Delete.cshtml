@@ -43,39 +43,27 @@
             @Html.DisplayFor(model => model.Status)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
+            @Html.DisplayNameFor(model => model.Created_at)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
+            @Html.DisplayFor(model => model.Created_at)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ModifiedAt)
+            @Html.DisplayNameFor(model => model.Categories)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ModifiedAt)
+            @Html.DisplayFor(model => model.Categories.CategoryName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DeleteAt)
+            @Html.DisplayNameFor(model => model.Discounts)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DeleteAt)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Discount.DiscountId)
+            @Html.DisplayFor(model => model.Discounts.DiscountID)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="ProductId" />
+        <input type="hidden" asp-for="ProductID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>
     </form>

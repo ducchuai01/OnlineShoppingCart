@@ -11,9 +11,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="mb-3">
-                <label asp-for="ProductId" class="control-label"></label>
-                <input asp-for="ProductId" class="form-control" />
-                <span asp-validation-for="ProductId" class="text-danger"></span>
+                <label asp-for="ProductID" class="control-label"></label>
+                <input asp-for="ProductID" class="form-control" />
+                <span asp-validation-for="ProductID" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="ProductName" class="control-label"></label>
@@ -45,7 +45,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Product portfolio</label>
-                        <select asp-items="ViewBag.Category" asp-for="CategoryId" class="form-control select2bs4 select2-hidden-accessible" id="idCat" style="min-width: 200px;" data-select2-id="20" tabindex="-1" aria-hidden="true">
+                        <select asp-items="ViewBag.Category" asp-for="CategoryID" class="form-control select2bs4 select2-hidden-accessible" id="idCat" style="min-width: 200px;" data-select2-id="20" tabindex="-1" aria-hidden="true">
                             <option value="">-------------------- Select a category --------------------</option>
                         </select>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Product portfolio</label>
-                        <select asp-items="ViewBag.Discount" asp-for="DiscountId" class="form-control select2bs4 select2-hidden-accessible" id="iddis" style="min-width: 200px;" data-select2-id="20" tabindex="-1" aria-hidden="true">
+                        <select asp-items="ViewBag.Discount" asp-for="DiscountID" class="form-control select2bs4 select2-hidden-accessible" id="iddis" style="min-width: 200px;" data-select2-id="20" tabindex="-1" aria-hidden="true">
                             <option value="">-------------------- Select a category --------------------</option>
                         </select>
                     </div>

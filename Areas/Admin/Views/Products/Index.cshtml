@@ -1,4 +1,4 @@
-﻿@model X.PagedList.IPagedList<EProjects_III.Models.Products>
+﻿@model X.PagedList.IPagedList<OnlineShoppingCart.Models.Products>
 @using X.PagedList.Mvc.Core;
 
 @{
@@ -49,18 +49,18 @@
                 @foreach (var item in Model)
                 {
                 <tr>
-                    <th>@item.ProductId</th>
+                    <th>@item.ProductID</th>
                     <td>@item.ProductName</td>
                     <td> <img src="/ImgProducts/@item.Image" alt="Alternate Text" width="100" /></td>
                     <td>@item.Price</td>
                     <td>@item.Quantity</td>
-                    <td>@item.Category.CategoryName</td>
-                    <td>@item.Discount.DiscountName</td>
+                    <td>@item.Categories.CategoryName</td>
+                    <td>@item.Discounts.DiscountName</td>
                     <td>@item.Status</td>
                     <td>
-                        <a style="color: green" asp-action="Edit" asp-route-id="@item.ProductId" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a> |
-                        <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.ProductId" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a> |
-                        <a style="color: mediumslateblue;padding-left: 20px" asp-action="Details" asp-route-id="@item.ProductId" title="Delete"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                        <a style="color: green" asp-action="Edit" asp-route-id="@item.ProductID" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a> |
+                        <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.ProductID" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a> |
+                        <a style="color: mediumslateblue;padding-left: 20px" asp-action="Details" asp-route-id="@item.ProductID" title="Delete"><i class="fa fa-calendar" aria-hidden="true"></i></a>
                     </td>
                 </tr>
                 }

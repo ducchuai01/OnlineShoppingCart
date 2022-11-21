@@ -1,4 +1,4 @@
-﻿@model EProjects_III.Models.Products
+﻿@model OnlineShoppingCart.Models.Products
 
 @{
     ViewData["Title"] = "Details";
@@ -42,38 +42,27 @@
             @Html.DisplayFor(model => model.Status)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
+            @Html.DisplayNameFor(model => model.Created_at)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
+            @Html.DisplayFor(model => model.Created_at)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Categories.CategoryName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ModifiedAt)
+            @Html.DisplayNameFor(model => model.Discounts)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ModifiedAt)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DeleteAt)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DeleteAt)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Discount.DiscountId)
+            @Html.DisplayFor(model => model.Discounts.DiscountID)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.ProductID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

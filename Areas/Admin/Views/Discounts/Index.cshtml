@@ -1,5 +1,5 @@
 ﻿@*@model IEnumerable<EProjects_III.Models.Category>*@
-@model X.PagedList.IPagedList<EProjects_III.Models.Discount>
+@model X.PagedList.IPagedList<OnlineShoppingCart.Models.Discounts>
 @using X.PagedList.Mvc.Core;
 
 @{
@@ -48,15 +48,15 @@
                 @foreach (var item in Model)
                 {
                 <tr>
-                    <th>@item.DiscountId</th>
+                    <th>@item.DiscountID</th>
                     <td>@item.DiscountName</td>
                     <td>@item.Description</td>
                     <td>@item.DiscountPercent %</td>
                     <td>@item.Active</td>
-                    <td>@item.CreatedAt</td>
+                    <td>@item.Created_at</td>
                     <td>
-                        <a style="color: green" asp-action="Edit" asp-route-id="@item.DiscountId" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                        <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.DiscountId" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <a style="color: green" asp-action="Edit" asp-route-id="@item.DiscountID" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.DiscountID" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
 
 
 
