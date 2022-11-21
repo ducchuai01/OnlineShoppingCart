@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using EProjects_III.Models;
+using OnlineShoppingCart.Models;
+using OnlineShoppingCart.Models.BusinessModels;
 using X.PagedList;
 
 namespace EProjects_III.Areas.Admin.Controllers
@@ -23,10 +24,10 @@ namespace EProjects_III.Areas.Admin.Controllers
         public IActionResult Index(string Search, int page = 1)
         {
             int limit = 5;
-            var list = _context.Discount.OrderBy(d => d.DiscountId).ToPagedList(page, limit);
+            var list = _context.Discounts.OrderBy(d => d.DiscountID).ToPagedList(page, limit);
             if (!string.IsNullOrEmpty(Search))
             {
-                list = _context.Discount.Where(d => d.DiscountName.Contains(Search)).OrderBy(d => d.DiscountId).ToPagedList(page, limit);
+                list = _context.Discounts.Where(d => d.DiscountName.Contains(Search)).OrderBy(d => d.DiscountID).ToPagedList(page, limit);
 
             }
             return View(list);
@@ -42,8 +43,8 @@ namespace EProjects_III.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var discount = await _context.Discount
-                .FirstOrDefaultAsync(m => m.DiscountId == id);
+            var discount = await _context.Discounts
+                .FirstOrDefaultAsync(m => m.DiscountID == id);
             if (discount == null)
             {
                 return NotFound();
@@ -63,14 +64,12 @@ namespace EProjects_III.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DiscountId,DiscountName,Description,DiscountPercent,Active,CreatedAt,ModifiedAt,DeleteAt")] Discount discount)
+        public async Task<IActionResult> Create([Bind("DiscountId,DiscountName,Description,DiscountPercent,Active,CreatedAt,ModifiedAt,DeleteAt")] Discounts discount)
         {
             if (ModelState.IsValid)
             {
-                discount.CreatedAt = DateTime.Now;
-                discount.DeleteAt = DateTime.Now;
-                discount.ModifiedAt = DateTime.Now;
-                _context.Discount.Add(discount);
+                discount.Created_at = DateTime.Now;
+                _context.Discounts.Add(discount);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
 
@@ -87,7 +86,7 @@ namespace EProjects_III.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var discount = await _context.Discount.FindAsync(id);
+            var discount = await _context.Discounts.FindAsync(id);
             if (discount == null)
             {
                 return NotFound();
@@ -100,9 +99,9 @@ namespace EProjects_III.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DiscountId,DiscountName,Description,DiscountPercent,Active,CreatedAt,ModifiedAt,DeleteAt")] Discount discount)
+        public async Task<IActionResult> Edit(int id, [Bind("DiscountId,DiscountName,Description,DiscountPercent,Active,CreatedAt,ModifiedAt,DeleteAt")] Discounts discount)
         {
-            if (id != discount.DiscountId)
+            if (id != discount.DiscountID)
             {
                 return NotFound();
             }
@@ -111,15 +110,13 @@ namespace EProjects_III.Areas.Admin.Controllers
             {
                 try
                 {
-                    discount.CreatedAt = DateTime.Now;
-                    discount.DeleteAt = DateTime.Now;
-                    discount.ModifiedAt = DateTime.Now;
+                    discount.Created_at = DateTime.Now;
                     _context.Update(discount);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DiscountExists(discount.DiscountId))
+                    if (!DiscountExists(discount.DiscountID))
                     {
                         return NotFound();
                     }
@@ -136,7 +133,7 @@ namespace EProjects_III.Areas.Admin.Controllers
         // GET: Admin/Discounts/Delete/5
         public IActionResult Delete(int id)
         {
-            var checkProduct = _context.Products.FirstOrDefault(p => p.DiscountId == id);
+            var checkProduct = _context.Products.FirstOrDefault(p => p.DiscountID == id);
             if (checkProduct != null)
             {
                 TempData["eror"] = "Discount code exists product cannot be deleted!";
@@ -144,10 +141,10 @@ namespace EProjects_III.Areas.Admin.Controllers
             }
             else
             {
-                var discount = _context.Discount.FirstOrDefault(b => b.DiscountId == id);
+                var discount = _context.Discounts.FirstOrDefault(b => b.DiscountID == id);
                 if (discount != null)
                 {
-                    _context.Discount.Remove(discount);
+                    _context.Discounts.Remove(discount);
                     _context.SaveChanges();
                     TempData["success"] = "Xóa thành công";
                     return RedirectToAction("Index");
@@ -190,7 +187,7 @@ namespace EProjects_III.Areas.Admin.Controllers
 
         private bool DiscountExists(int id)
         {
-            return _context.Discount.Any(e => e.DiscountId == id);
+            return _context.Discounts.Any(e => e.DiscountID == id);
         }
     }
 }

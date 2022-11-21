@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using EProjects_III.Models;
+using OnlineShoppingCart.Models;
 using X.PagedList;
 using System.IO;
+using OnlineShoppingCart.Models.BusinessModels;
 
-namespace EProjects_III.Areas.Admin.Controllers
+namespace OnlineShoppingCart.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class ProductsController : Controller
@@ -25,13 +26,13 @@ namespace EProjects_III.Areas.Admin.Controllers
         public IActionResult Index(string Search, int page = 1)
         {
             int limit = 5;
-            var list = _context.Products.Include(p => p.Discount).Include(p => p.Category).OrderByDescending(p => p.ProductId).ToPagedList(page, limit);
+            var list = _context.Products.Include(p => p.Discounts).Include(p => p.Categories).OrderByDescending(p => p.ProductID).ToPagedList(page, limit);
             if (!string.IsNullOrEmpty(Search))
             {
-                list = _context.Products.Include(p => p.Discount).Include(p => p.Category).Where(p => p.ProductName.Contains(Search)).OrderByDescending(p => p.ProductId).ToPagedList(page, limit);
+                list = _context.Products.Include(p => p.Discounts).Include(p => p.Categories).Where(p => p.ProductName.Contains(Search)).OrderByDescending(p => p.ProductID).ToPagedList(page, limit);
             }
-            ViewData["Category"] = new SelectList(_context.Discount, "CategoryId", "CategoryName");
-            ViewData["Discount"] = new SelectList(_context.Discount, "DiscountId", "DiscountName");
+            ViewData["Category"] = new SelectList(_context.Discounts, "CategoryId", "CategoryName");
+            ViewData["Discount"] = new SelectList(_context.Discounts, "DiscountId", "DiscountName");
             return View(list);
         }
 
@@ -44,9 +45,9 @@ namespace EProjects_III.Areas.Admin.Controllers
             }
 
             var products = await _context.Products
-                .Include(p => p.Category)
-                .Include(p => p.Discount)
-                .FirstOrDefaultAsync(m => m.ProductId == id);
+                .Include(p => p.Categories)
+                .Include(p => p.Discounts)
+                .FirstOrDefaultAsync(m => m.ProductID.Equals(id));
             if (products == null)
             {
                 return NotFound();
@@ -58,8 +59,8 @@ namespace EProjects_III.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public IActionResult Create()
         {
-            ViewData["Category"] = new SelectList(_context.Category, "CategoryId", "CategoryName");
-            ViewData["Discount"] = new SelectList(_context.Discount, "DiscountId", "DiscountName");
+            ViewData["Category"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
+            ViewData["Discount"] = new SelectList(_context.Discounts, "DiscountId", "DiscountName");
             return View();
         }
 
@@ -83,9 +84,8 @@ namespace EProjects_III.Areas.Admin.Controllers
                         file.CopyTo(stream);
                         products.Image = fileName;
                     }
-                    products.CreatedAt = DateTime.Now;
-                    products.DeleteAt = DateTime.Now;
-                    products.ModifiedAt = DateTime.Now;
+                    products.Created_at = DateTime.Now;
+           
 
                 }
 
@@ -94,9 +94,9 @@ namespace EProjects_III.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Category"] = new SelectList(_context.Category, "CategoryId", "CategoryName", products.CategoryId);
+            ViewData["Category"] = new SelectList(_context.Categories, "CategoryId", "CategoryName", products.CategoryID);
 
-            ViewData["Discount"] = new SelectList(_context.Discount, "DiscountId", "DiscountName", products.DiscountId);
+            ViewData["Discount"] = new SelectList(_context.Discounts, "DiscountId", "DiscountName", products.DiscountID);
 
             return View(products);
         }
@@ -114,8 +114,8 @@ namespace EProjects_III.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["Category"] = new SelectList(_context.Category, "CategoryId", "CategoryName", products.CategoryId);
-            ViewData["Discount"] = new SelectList(_context.Discount, "DiscountId", "DiscountId", products.DiscountId);
+            ViewData["Category"] = new SelectList(_context.Categories, "CategoryId", "CategoryName", products.CategoryID);
+            ViewData["Discount"] = new SelectList(_context.Discounts, "DiscountId", "DiscountId", products.DiscountID);
             return View(products);
         }
 
@@ -124,10 +124,10 @@ namespace EProjects_III.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("ProductId,ProductName,Image,Price,Quantity,CategoryId,DiscountId,Status,CreatedAt,ModifiedAt,DeleteAt")] Products products, [Bind("oldImg")]string oldImg)
+        public async Task<IActionResult> Edit(Guid id, [Bind("ProductId,ProductName,Image,Price,Quantity,CategoryId,DiscountId,Status,CreatedAt,ModifiedAt,DeleteAt")] Products products, [Bind("oldImg")]string oldImg)
         {
             
-            if (id != products.ProductId)
+            if (id != products.ProductID)
             {
                 return NotFound();
             }
@@ -159,7 +159,7 @@ namespace EProjects_III.Areas.Admin.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductsExists(products.ProductId))
+                    if (!ProductsExists(products.ProductID))
                     {
                         return NotFound();
                     }
@@ -170,8 +170,8 @@ namespace EProjects_III.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Category"] = new SelectList(_context.Category, "CategoryId", "CategoryName", products.CategoryId);
-            ViewData["Discount"] = new SelectList(_context.Discount, "DiscountId", "DiscountId", products.DiscountId);
+            ViewData["Category"] = new SelectList(_context.Categories, "CategoryId", "CategoryName", products.CategoryID);
+            ViewData["Discount"] = new SelectList(_context.Discounts, "DiscountId", "DiscountId", products.DiscountID);
             return View(products);
         }
 
@@ -184,9 +184,9 @@ namespace EProjects_III.Areas.Admin.Controllers
             }
 
             var products = await _context.Products
-                .Include(p => p.Category)
-                .Include(p => p.Discount)
-                .FirstOrDefaultAsync(m => m.ProductId == id);
+                .Include(p => p.Categories)
+                .Include(p => p.Discounts)
+                .FirstOrDefaultAsync(m => m.ProductID.Equals(id));
             if (products == null)
             {
                 return NotFound();
@@ -206,9 +206,9 @@ namespace EProjects_III.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProductsExists(string id)
+        private bool ProductsExists(Guid id)
         {
-            return _context.Products.Any(e => e.ProductId == id);
+            return _context.Products.Any(e => e.ProductID.Equals(id));
         }
     }
 }

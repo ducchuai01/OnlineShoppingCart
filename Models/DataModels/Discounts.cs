@@ -19,7 +19,7 @@ namespace OnlineShoppingCart.Models
 		[DisplayName("Discount Name")]
 		[Column(TypeName = "nvarchar(50)")]
 		[StringLength(50)]
-		public int DiscountName { get; set; }
+		public string DiscountName { get; set; }
 		[DisplayName("Description")]
 		[Column(TypeName = "nvarchar(255)")]
 		[MaxLength]

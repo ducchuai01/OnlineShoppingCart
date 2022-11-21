@@ -169,3 +169,12 @@ C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netc
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Discounts\Create.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Discounts\Details.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Discounts\Edit.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Discounts\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Products\Create.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Products\Delete.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Products\Details.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Products\Edit.cshtml.g.cs
+C:\Users\Admin\source\repos\OnlineShoppingCart\OnlineShoppingCart\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Products\Index.cshtml.g.cs

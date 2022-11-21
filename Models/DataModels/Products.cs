@@ -44,7 +44,6 @@ namespace OnlineShoppingCart.Models
 		public bool Status { get; set; }
 		[DisplayName("Created At")]
 		public DateTime Created_at { get; set; }
-		[DisplayName("Deleted At")]
-		public DateTime Deleted_at { get; set; }
+		
 	}
 }
