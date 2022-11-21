@@ -1,4 +1,4 @@
-﻿@model OnlineShoppingCart.Models.Categories
+﻿@model EProjects_III.Models.Category
 
 @{
     ViewData["Title"] = "Create";
@@ -10,11 +10,7 @@
         <h6 class="mb-4">Add New Category</h6>
         <form asp-controller="Categories" asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="mb-3">
-                <label asp-for="CategoryID" class="control-label"></label>
-                <input asp-for="CategoryID" class="form-control" />
-                <span asp-validation-for="CategoryID" class="text-danger"></span>
-            </div>
+            
             <div class="mb-3">
                 <label asp-for="CategoryName" class="control-label"></label>
                 <input asp-for="CategoryName" class="form-control" />
@@ -30,13 +26,13 @@
                 <input asp-for="Image" type="file" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
+           
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Ghi thông tin</button>
-                <a asp-action="Index">Back to List</a>
+                <button class="btn btn-outline-success m-2 " type="submit" >Record information</button>
+                <a class="btn btn-outline-info m-2" asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
 </div>
-
 
 

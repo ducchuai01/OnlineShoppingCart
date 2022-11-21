@@ -1,0 +1,77 @@
+﻿@model EProjects_III.Models.Products
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4">Add New Product</h6>
+        <form asp-controller="Products" asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="ProductId" class="control-label"></label>
+                <input asp-for="ProductId" class="form-control" />
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" type="file" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Quantity" class="control-label"></label>
+                        <input asp-for="Quantity" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+                 </div>
+             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Product portfolio</label>
+                        <select asp-items="ViewBag.Category" asp-for="CategoryId" class="form-control select2bs4 select2-hidden-accessible" id="idCat" style="min-width: 200px;" data-select2-id="20" tabindex="-1" aria-hidden="true">
+                            <option value="">-------------------- Select a category --------------------</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Product portfolio</label>
+                        <select asp-items="ViewBag.Discount" asp-for="DiscountId" class="form-control select2bs4 select2-hidden-accessible" id="iddis" style="min-width: 200px;" data-select2-id="20" tabindex="-1" aria-hidden="true">
+                            <option value="">-------------------- Select a category --------------------</option>
+                        </select>
+                    </div>
+                </div>
+             </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Status</label>
+                <br>
+                <input type="radio" name="Status" value="true" checked>Stocking
+                <input type="radio" name="Status" value="false">Out of stock
+            </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-success m-2 " type="submit">Record information</button>
+                    <a class="btn btn-outline-info m-2" asp-action="Index">Back to List</a>
+                </div>
+</form>
+    </div>
+</div>
+
+
+

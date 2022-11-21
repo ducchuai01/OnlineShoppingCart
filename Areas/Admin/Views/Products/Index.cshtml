@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<EProjects_III.Models.Category>*@
-@model X.PagedList.IPagedList<EProjects_III.Models.Category>
+﻿@model X.PagedList.IPagedList<EProjects_III.Models.Products>
 @using X.PagedList.Mvc.Core;
 
 @{
@@ -11,11 +10,11 @@
     <div class="bg-secondary rounded h-100 p-4">
         @*<div class="row">*@
         <div class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-            <h6 class="">List Of Categories</h6>
+            <h6 class="">List Of Product</h6>
             <form class="d-none d-md-flex ms-4" action="/Admin/Categories/Index" method="GET">
                 @*<input class="form-control bg-dark border-0" type="search" placeholder="Search">*@
                 <div class="input-group input-group-sm" style="width: 350px;">
-                    <input type="text" name="Search" class="form-control float-right" placeholder="Enter Category Name">
+                    <input type="text" name="Search" class="form-control float-right" placeholder="Enter Product Name">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-default">
                             <i class="fas fa-search"></i>
@@ -26,37 +25,44 @@
 
         </div>
         <div class="navbar-nav align-items-center ms-auto">
-            <a class="btn btn-outline-info m-2" asp-area="Admin" asp-controller="Categories" asp-action="Create">Add Category</a>
+            <a class="btn btn-outline-info m-2" asp-area="Admin" asp-controller="Products" asp-action="Create">Add Product</a>
         </div>
         @*</div>*@
 
 
         <table class="table table-bordered">
-            
+
             <thead>
                 <tr>
-                    <th scope="col">CategoryId</th>
-                    <th scope="col">CategoryName</th>
-                    <th scope="col">Descripton</th>
+                    <th scope="col">ProductId</th>
+                    <th scope="col">ProductName</th>
                     <th scope="col">Image</th>
-                    <th scope="col">CreatedAt</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">CategoryName</th>
+                    <th scope="col">DiscountId</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Functions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <th>@item.CategoryId</th>
-                        <td>@item.CategoryName</td>
-                        <td>@item.Descripton</td>
-                        <td> <img src="/ImgCategory/@item.Image" alt="Alternate Text" width="100" /></td>
-                        <td>@item.CreatedAt</td>
-                        <td>
-                            <a style="color: green" asp-action="Edit" asp-route-id="@item.CategoryId" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.CategoryId" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                        </td>
-                    </tr>
+                <tr>
+                    <th>@item.ProductId</th>
+                    <td>@item.ProductName</td>
+                    <td> <img src="/ImgProducts/@item.Image" alt="Alternate Text" width="100" /></td>
+                    <td>@item.Price</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.Discount.DiscountName</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <a style="color: green" asp-action="Edit" asp-route-id="@item.ProductId" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i></a> |
+                        <a style="color: red;padding-left: 20px" asp-action="Delete" asp-route-id="@item.ProductId" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a> |
+                        <a style="color: mediumslateblue;padding-left: 20px" asp-action="Details" asp-route-id="@item.ProductId" title="Delete"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
                 }
             </tbody>
 
@@ -74,3 +80,4 @@
         </ul>
     </div>
 </div>
+
