@@ -138,10 +138,9 @@ CREATE TABLE Products(
 	Created_at datetime not null,
 	Deleted_at datetime null
 )
-CREATE TABLE OrderDetail(
+CREATE TABLE Orders(
 	OrderDetailID int primary key identity(10001,1),
 	UserID varchar(20) foreign key (UserID) references Users(UserID),
-	Total decimal(10) not null default(0),
 	Created_at datetime not null,
 )
 CREATE TABLE PaymentDetails(

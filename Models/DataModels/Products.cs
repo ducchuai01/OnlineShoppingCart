@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using OnlineShoppingCart.Models.DataModels;
 
 namespace OnlineShoppingCart.Models
 {
@@ -44,6 +45,8 @@ namespace OnlineShoppingCart.Models
 		public bool Status { get; set; }
 		[DisplayName("Created At")]
 		public DateTime Created_at { get; set; }
-		
-	}
+
+        public ICollection<OrderItems> OrderItems{ get; set; }
+
+    }
 }

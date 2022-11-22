@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{4A3F7AA8-81D7-4DB1-BDAD-65B0F05BFC87}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+    <Files>
+      <File FileName="Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="23" Column="13" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="SemIII.sql" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="1" Column="1" />
+      <File FileName="appsettings.json" Line="14" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OnlineShoppingCart" expanded="True">
+            <Node name="OnlineShoppingCart" expanded="True" selected="True">
+              <Node name="Areas" expanded="True">
+                <Node name="Admin" expanded="True">
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="Data" expanded="True" />
+                  <Node name="Models" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Categories" expanded="True" />
+                    <Node name="Discounts" expanded="True" />
+                    <Node name="Home" expanded="True" />
+                    <Node name="Login" expanded="True" />
+                    <Node name="Products" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Login" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.OnlineShoppingCart PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using OnlineShoppingCart.Models.DataModels;
 
 namespace OnlineShoppingCart.Models
 {
@@ -56,5 +57,6 @@ namespace OnlineShoppingCart.Models
         public DateTime Updated_at { get; set; }
         public Provinces Provinces { get; set; }
         public ICollection<FeedBacks> FeedBack { get; set; }
+        public ICollection<Orders> Orders { get; set; }
     }
 }
