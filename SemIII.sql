@@ -139,13 +139,13 @@ CREATE TABLE Products(
 	Deleted_at datetime null
 )
 CREATE TABLE Orders(
-	OrderDetailID int primary key identity(10001,1),
+	OrderID int primary key identity(10001,1),
 	UserID varchar(20) foreign key (UserID) references Users(UserID),
 	Created_at datetime not null,
 )
 CREATE TABLE PaymentDetails(
 	PaymentID int primary key identity(10001,1),
-	OrderDetailID int foreign key (OrderDetailID) references OrderDetail(OrderDetailID),
+	OrderID int foreign key (OrderDetailID) references OrderDetail(OrderDetailID),
 	Amount int not null,
 	Provider varchar(50) not null,
 	Status varchar(20),
@@ -154,7 +154,7 @@ CREATE TABLE PaymentDetails(
 
 CREATE TABLE OrderItems(
 	OrderItems int primary key identity(10001,1),
-	OrderDetailID int foreign key (OrderDetailID) references OrderDetail(OrderDetailID),
+	OrderID int foreign key (OrderDetailID) references OrderDetail(OrderDetailID),
 	ProductID varchar(20) foreign key (ProductID) references Products(ProductID),
 	Created_at datetime not null,
 )
